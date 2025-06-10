@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IPL {{ season }} Points Table</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #3a1c71, #d76d77, #ffaf7b);
+      margin: 0;
+      padding: 40px 20px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      background: #fff;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      text-align: center;
+      color: #3a1c71;
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 14px 12px;
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    th {
+      background-color: #3a1c71;
+      color: white;
+      font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #e0e0ff;
+    }
+
+    .rank {
+      font-weight: bold;
+      color: #764ba2;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background: #3a1c71;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .back-btn:hover {
+      background: #5b2a91;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>IPL {{ season }} Points Table</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Team</th>
+          <th>Played</th>
+          <th>Wins</th>
+          <th>Losses</th>
+          <th>No Result</th>
+          <th>Points</th>
+          <th>Season Position</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for team in points %}
+        <tr>
+          <td class="rank">{{ loop.index }}</td>
+          <td>{{ team.Team_name }}</td>
+          <td>{{ team.Match_played }}</td>
+          <td>{{ team.Wins }}</td>
+          <td>{{ team.Losses }}</td>
+          <td>{{ team.No_result }}</td>
+          <td>{{ team.Points }}</td>
+          <td>{{ team.SeasonPosition }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

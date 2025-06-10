@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Orange Cap Winners</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #f7971e, #ffd200);
+      color: #333;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff8e1;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      text-align: center;
+      color: #f57c00;
+      margin-bottom: 30px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f57c00;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #ffecb3;
+    }
+
+    tr:hover {
+      background-color: #ffe082;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Orange Cap Winners by Season</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Season</th>
+          <th>Batsman</th>
+          <th>Runs</th>
+          <th>Average</th>
+          <th>Strike Rate</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for season, stats in orange_data.items() %}
+        <tr>
+          <td>{{ season }}</td>
+          <td>{{ stats.Batsman }}</td>
+          <td>{{ stats.Runs }}</td>
+          <td>{{ stats.Average }}</td>
+          <td>{{ stats.Strike_Rate }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IPL Match Predictor</title>
+
+    <!-- Updated favicon -->
+    <link rel="icon" type="image/jpeg" href="{{ url_for('static', filename='indian-premier-league-ipl-official-260nw-2308551109.jpg') }}">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+        }
+
+        header {
+            background-color: #ff3d00;
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            height: 50px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            color: #0d47a1;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+            width: 90%;
+            max-width: 400px;
+            margin-top: 30px;
+        }
+
+        .form-container h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #0f2027;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            background-color: #1565c0;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0d47a1;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+            <img src="{{ url_for('static', filename='indian-premier-league-ipl-official-260nw-2308551109.jpg') }}" alt="IPL Logo" class="logo">
+            <span>IPL Web App</span>
+        </div>
+    </header>
+
+
+    <div class="form-container">
+        <h3>Select any option</h3>
+
+        <form method="POST">
+            <button type="submit" formaction="/api/teams">📋 All Teams List</button>
+        </form>
+
+        <form method="POST">
+            <button type="submit" formaction="/api/teamVteam">⚔️ Team vs Team </button>
+        </form>
+
+        <form method="POST">
+            <button type="submit" formaction="/api/team_winning_record">🏆 Team Winning Record</button> 
+        </form>
+
+        <form method="POST">
+            <button type="submit" formaction="/api/point_table">📊 Point Table</button>
+        </form>
+
+        <form method="POST">
+            <button type="submit" formaction="/api/purple_cap">🟣 Purple Cap Holder</button>
+        </form>
+
+        <form method="POST">
+            <button type="submit" formaction="/api/orange_cap">🟠 Orange Cap Holder</button>
+        </form>
+
+        <form method="POST">
+            <button type="submit" formaction="/api/batting_pair">👬 Top Batting Pairs</button>
+        </form>
+
+        <form method="POST">
+            <button type="submit" formaction="/api/Player_Of_Match">⭐ Player Of The Match</button>
+        </form>
+
+        <form method="POST">
+            <button type="submit" formaction="/api/bowler_details">🎯 Bowler Details</button>
+        </form>
+
+        <form method="POST">
+            <button type="submit" formaction="/api/batsman_details">🏏 Batsman Details</button>
+        </form>
+    </div>
+
+    <footer>© 2025 IPL Stats & Predictor App</footer>
+</body>
+</html>

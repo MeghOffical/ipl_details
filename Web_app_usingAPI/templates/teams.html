@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>IPL Teams</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f6fb;
+            margin: 0;
+            padding: 0;
+            color: #2d3748;
+        }
+        .team-section {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 40px 30px;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(60, 72, 88, 0.12);
+            text-align: center;
+        }
+        .team-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            color: #1a202c;
+        }
+        .team-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            padding-top: 10px;
+        }
+        .team-member {
+            background: #edf2f7;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(60, 72, 88, 0.1);
+            font-weight: 600;
+            font-size: 1.15rem;
+            color: #2d3748;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            cursor: default;
+        }
+        .team-member:hover {
+            background-color: #bee3f8;
+            transform: translateY(-5px) scale(1.04);
+            box-shadow: 0 10px 20px rgba(66, 153, 225, 0.3);
+        }
+        @media (max-width: 480px) {
+            .team-section {
+                padding: 30px 15px;
+            }
+            .team-member {
+                height: 80px;
+                font-size: 1rem;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="team-section">
+        <h2>IPL Teams List</h2>
+        <div class="team-list">
+            {% for team in teams %}
+                <div class="team-member">{{ team }}</div>
+            {% endfor %}
+        </div>
+    </section>
+</body>
+</html>
