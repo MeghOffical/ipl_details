@@ -1,1 +1,0 @@
-/api/specific_bowler
